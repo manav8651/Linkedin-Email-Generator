@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn Email Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Generate Emails</h2>
+        <div class="input-group">
+            <label for="domain">Company Domain:</label>
+            <input type="text" id="domain" placeholder="e.g., company.com">
+        </div>
+        <div class="input-group">
+            <label for="formatKey">Email Format:</label>
+            <select id="formatKey">
+                <option value="fn.ln">firstname.lastname</option>
+                <option value="filn">firstinitial.lastname</option>
+                <option value="fn">firstname</option>
+                <option value="fnln">firstnamelastname</option>
+                <option value="fn_ln">firstname_lastname</option>
+                <option value="fn.miln">firstname.middleinitial.lastname</option>
+            </select>
+        </div>
+        <button id="generateBtn">Generate Emails</button>
+        <div id="results" class="results-container">
+            <p id="status"></p>
+            <ul id="emailList"></ul>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
