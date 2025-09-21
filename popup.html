@@ -7,25 +7,42 @@
 <body>
     <div class="container">
         <h2>Generate Emails</h2>
-        <div class="input-group">
-            <label for="domain">Company Domain:</label>
-            <input type="text" id="domain" placeholder="e.g., company.com">
+        <div class="controls-top">
+            <div class="input-group">
+                <label for="spreadsheetId">Google Sheet ID:</label>
+                <div class="input-with-button">
+                    <input type="text" id="spreadsheetId" placeholder="Enter your sheet ID here">
+                    <button id="clearIdBtn" title="Clear Sheet ID">X</button>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="domain">Company Domain:</label>
+                <input type="text" id="domain" placeholder="e.g., company.com">
+            </div>
+            <div class="input-group">
+                <label for="formatKey">Email Format:</label>
+                <select id="formatKey">
+                    <option value="fn.ln">firstname.lastname</option>
+                    <option value="filn">firstinitial.lastname</option>
+                    <option value="flast">flast</option>
+                    <option value="lastf">lastnamefirstinitial</option>
+                    <option value="fn">firstname</option>
+                    <option value="fnln">firstnamelastname</option>
+                    <option value="fn_ln">firstname_lastname</option>
+                    <option value="fn.miln">firstname.middleinitial.lastname</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <button id="generateBtn">Generate</button>
+                <button id="saveBtn" class="hidden">Save to Sheet</button>
+                <button id="clearListBtn" class="hidden">Clear List</button>
+            </div>
         </div>
-        <div class="input-group">
-            <label for="formatKey">Email Format:</label>
-            <select id="formatKey">
-                <option value="fn.ln">firstname.lastname</option>
-                <option value="filn">firstinitial.lastname</option>
-                <option value="fn">firstname</option>
-                <option value="fnln">firstnamelastname</option>
-                <option value="fn_ln">firstname_lastname</option>
-                <option value="fn.miln">firstname.middleinitial.lastname</option>
-            </select>
-        </div>
-        <button id="generateBtn">Generate Emails</button>
-        <div id="results" class="results-container">
+        
+        <div class="results-container">
             <p id="status"></p>
-            <ul id="emailList"></ul>
+            <p>Emails Collected: <span id="emailCount">0</span>/100</p>
+            <ul id="emailList" class="scrollable-list"></ul>
         </div>
     </div>
     <script src="popup.js"></script>
